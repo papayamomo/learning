@@ -1,8 +1,10 @@
-package networks.bio;
+package networks.pseudo_asynch;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import networks.bio.TimeServerHandler;
 
 public class TimeServer {
 
@@ -21,9 +23,11 @@ public class TimeServer {
 			server = new ServerSocket(port);
 			System.out.println("The time server is started in port : " + port);
 			Socket socket = null;
+			TimeServerHandlerExecutePool singleExecutor = new TimeServerHandlerExecutePool(
+					50, 10000);
 			while (true) {
 				socket = server.accept();
-				new Thread(new TimeServerHandler(socket)).start();
+				singleExecutor.execute(new TimeServerHandler(socket));
 			}
 		} finally {
 			if (server != null) {
