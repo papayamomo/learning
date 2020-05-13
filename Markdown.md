@@ -13,7 +13,7 @@ public static void main(String[] args) {
 
 
 #### 流程图
-```
+```mermaid
 graph TB
     A[Christmas] --> B(Go Shopping)
     B --> C{Let me think}
@@ -23,7 +23,7 @@ graph TB
 ```
 
 #### 序列图
-```
+```mermaid
 sequenceDiagram
     loop every day
         Alice->>John: Hello John, how are you?
@@ -33,7 +33,7 @@ sequenceDiagram
 
 
 #### 甘特图
-```
+```mermaid
 gantt
 dateFormat YYYY-MM-DD
 title 产品计划
@@ -121,16 +121,16 @@ TB - top bottom（自上而下）
 BT - bottom top（自下而上）
 RL - right left（从右到左）
 LR - left right（从左到右）
-```
+```mermaid
 graph TB
 A-->B
 ```
-```
+```mermaid
 graph RL
 A-->B
 ```
 
-```
+```mermaid
 graph LR
 A((这是圆))
 ---
