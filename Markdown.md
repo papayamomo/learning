@@ -1,3 +1,5 @@
+[TOC]
+
 #### 代码
 ``` Java
 public static void main(String[] args) {
